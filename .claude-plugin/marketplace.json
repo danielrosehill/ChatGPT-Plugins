@@ -1,0 +1,27 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "danielrosehill-chatgpt",
+  "owner": {
+    "name": "Daniel Rosehill",
+    "email": "public@danielrosehill.com",
+    "url": "https://danielrosehill.com"
+  },
+  "metadata": {
+    "description": "Daniel Rosehill's public plugins adapted for ChatGPT: instruction-only Agent Skills that work within ChatGPT's current plugin support. Fuller Claude Code versions are in danielrosehill/Claude-Code-Plugins.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "israel-research",
+      "source": { "source": "github", "repo": "danielrosehill/Israel-Research-Skills" },
+      "description": "Israel-specific research and know-how: Kol Zchut rights and entitlements, Home Front Command guidelines, NSC travel warnings, medicines in the Israeli system, which office handles what, phone-number quirks, Shabbat-relative opening hours, salary conversion, and shopping (Zap price checks, personal-import VAT, plug and voltage compatibility, white-label brands). Instruction-only; web search and fetch.",
+      "category": "research"
+    },
+    {
+      "name": "rtl-conformity",
+      "source": { "source": "github", "repo": "danielrosehill/RTL-Conformity-Skills" },
+      "description": "Right-to-left conformity for Hebrew, Arabic, Farsi and Urdu across email (Gmail, Resend), Google Docs, Sheets, Slides and Drive, calendar events, and generated files (Word, PDF, Excel, CSV, charts): explicit direction, isolated numbers and dates, Israeli formatting conventions, read-back checks. Instruction-only.",
+      "category": "productivity"
+    }
+  ]
+}
