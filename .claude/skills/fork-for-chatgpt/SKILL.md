@@ -5,6 +5,8 @@ description: Fork one of Daniel's Claude Code plugins into a public, ChatGPT-com
 
 # Fork a Claude Code plugin for ChatGPT
 
+> Since 2026-10-18 the general version of this procedure, covering private and public routes, a portability scanner and the verified import facts, is the `chatgpt-porting` plugin (`danielrosehill/Claude-ChatGPT-Porting-Plugin`, private marketplace). Prefer `chatgpt-porting:port-plugin-to-chatgpt`. This project skill stays as the Route B quick reference.
+
 The full versions of Daniel's plugins live in the Claude Code marketplace
 [`danielrosehill/Claude-Code-Plugins`](https://github.com/danielrosehill/Claude-Code-Plugins)
 (local clone: `~/repos/github/ai-agents-and-prompts/ai-claude-marketplaces/Claude-Code-Plugins`).
@@ -39,7 +41,7 @@ component of the source plugin:
 | Subagents (`agents/`) | Fold the instructions into a skill, or drop them |
 | Hooks | **Drop.** They don't run in ChatGPT, and they make a plugin ineligible for OpenAI's public directory |
 | Scripts the skill shells out to | Rewrite as instructions the model can follow with web search/fetch or code execution, or drop the skill |
-| `.mcp.json` (local/stdio servers) | Drop. A `.mcp.json` labels the plugin *Desktop only*. A **remote** streamable-HTTP server can go in a root `mcp.json` instead, with auth under `mcpServers.<name>.extensions["com.openai"].auth` |
+| `.mcp.json` (local/stdio servers) | Drop. A `.mcp.json` labels the plugin *Desktop only*. A **remote** streamable-HTTP server can go in a root `mcp.json`, with auth under `mcpServers.<name>.extensions["com.openai"].auth`. But it is ignored unless a root `plugin.json` exists too, and even then chatgpt.com offers it only in the desktop app (verified 2026-10-17). Keep instruction-only skills in a plugin with no MCP declaration |
 | Claude-specific tool names (`Bash`, `WebFetch`, `mcp__…`, Claude in Chrome) | Describe the capability instead ("search the web", "your Google Drive tool") |
 | Machine-specific paths, personal data, household facts | Remove. These repos are public |
 
